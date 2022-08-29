@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Registro RPG</title>
 </head>
@@ -23,10 +24,10 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Meus personagens</a>
+                    <a class="nav-link" href="personagens.html">Meus personagens</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Minhas campanhas</a>
+                        <a class="nav-link" href="Campanha.html">Minhas campanhas</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">                    
@@ -45,40 +46,58 @@
         <div class="row">
             <div class="col-md-12 mt-5">
                 <div class="col-md-12">
+                    <a href="informacao.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                     <h1 class="h2 mb-3 fw-normal text-center">Informações</h1>
                 </div>
-                <table class="table table-bordered text-center">
-                    <tbody>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">JOGADOR</th>
-                            <td>Dagoberto Diogo</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">PERSONAGEM</th>
-                            <td>Kleiton</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">RAÇA</th>
-                            <td>Humano</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">CLASSE</th>
-                            <td>Ladrão</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">GENERO</th>
-                            <td>Masculino</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">DATA CRIAÇÃO</th>
-                            <td>28/05/2022</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <div class="row mb-5">
+                    <div class="col-md-4">
+                        <img src="imagens/persongem.jpg" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <table class="table table-bordered text-center">
+                            <tbody>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">JOGADOR</th>
+                                    <td>Dagoberto Diogo</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">PERSONAGEM</th>
+                                    <td>Kleiton</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">RAÇA</th>
+                                    <td>Humano</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">CLASSE</th>
+                                    <td>Ladrão</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">GENERO</th>
+                                    <td>Masculino</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">DATA CRIAÇÃO</th>
+                                    <td>28/05/2022</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">NIVEL</th>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">EXPERIÊNCIA</th>
+                                    <td>128</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="row"></div>
                 <div class="col-md-6">
                     <div class="col-md-12">
+                        <a href="caracteristicas.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                         <h1 class="h2 mb-3 fw-normal text-center">Características Basícas</h1>
                     </div>
                     <table class="table table-bordered text-center">
@@ -105,6 +124,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
+                            <a href="idiomas-bens.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                             <h1 class="h2 mb-3 fw-normal text-center">Idiomas</h1>
                         </div>
                         <div class="col-md-12">
@@ -119,6 +139,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
+                            <a href="idiomas-bens.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                             <h1 class="h2 mb-3 fw-normal text-center">Dinheiro e Bens</h1>
                         </div>
                         <div class="col-md-12">
@@ -155,50 +176,64 @@
     <div class="container">
 
         <div class="row mt-5">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="col-md-12">
+                    <a href="atributos.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                     <h1 class="h2 mb-3 fw-normal text-center">Atributos</h1>
                 </div>
-                <table class="table table-bordered text-center">
-                    <tbody>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">FORÇA</th>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">DESTREZA</th>
-                            <td>15</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">CONSTITUIÇÃO</th>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">INTELIGENCIA</th>
-                            <td>18</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">SABEDORIA</th>
-                            <td>17</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">CARISMA</th>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">PODER</th>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <th class="table-secondary text-dark" scope="row">SORTE</th>
-                            <td>20</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-bordered text-center">
+                            <tbody>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">FORÇA</th>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">DESTREZA</th>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">CONSTITUIÇÃO</th>
+                                    <td>9</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">INTELIGENCIA</th>
+                                    <td>18</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-bordered text-center">
+                            <tbody>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">SABEDORIA</th>
+                                    <td>17</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">CARISMA</th>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">PODER</th>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-secondary text-dark" scope="row">SORTE</th>
+                                    <td>20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">
+                        <a href="sub-atributos.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                         <h1 class="h2 mb-3 fw-normal text-center">Sub Atributos</h1>
                     </div>
                     <div class="col-md-12">
@@ -228,27 +263,6 @@
                         </table>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-md-12">
-                            <h1 class="h2 mb-3 fw-normal text-center"></h1>
-                        </div>
-                        <table class="table table-bordered text-center">
-                            <thead>
-                                <tr>
-                                    <th class="table-secondary text-dark" scope="row">NÍVEL</th>
-                                    <th class="table-secondary text-dark" scope="row">EXPERIENCIA</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>5</td>
-                                    <td>621</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -259,6 +273,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-12">
+                        <a href="armaduras-armas.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                         <h1 class="h2 mb-3 fw-normal text-center">Armas</h1>
                     </div>
                     <div class="col-md-12">
@@ -281,7 +296,11 @@
             </div>
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12"> 
+                        <a href="armaduras-armas.html" class="btn btn-info float-right btn-sm">
+                            <i class="fa-solid fa-pencil"></i> 
+                            Editar
+                        </a>
                         <h1 class="h2 mb-3 fw-normal text-center">Armaduras</h1>
                     </div>
                     <div class="col-md-12">
@@ -313,6 +332,7 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-12">
+                                <a href="informacao.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                                 <h1 class="h2 mb-3 fw-normal text-center">Pericia</h1>
                             </div>
                             <div class="col-md-12">
@@ -335,6 +355,7 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-12">
+                                <a href="informacao.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                                 <h1 class="h2 mb-3 fw-normal text-center">Itens Gerais</h1>
                             </div>
                             <div class="col-md-12">
@@ -358,6 +379,7 @@
             </div>
             <div class="col-md-12">
                 <div class="col-md-12">
+                    <a href="informacao.html" class="btn btn-info float-right btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
                     <h1 class="h2 mb-3 fw-normal text-center">Magias</h1>
                 </div>
                 <div class="col-md-12">
