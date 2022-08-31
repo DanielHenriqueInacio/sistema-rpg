@@ -3,7 +3,7 @@ import {campanhaMestre, historiaMestre} from "../App/Controllers/MestreControlle
 const mestreRouter = new Router();
 
 mestreRouter.use((req, res, next) => {
-    req.app.set('layout', 'layout-jogador');
+    req.app.set('layout', 'layout-mestre');
     next();
 });
 
