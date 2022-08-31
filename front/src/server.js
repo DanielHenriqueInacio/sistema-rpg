@@ -3,6 +3,7 @@ import express from "express";
 import expressLayouts from "express-ejs-layouts";
 import {resolve} from 'path';
 import routers from "./routes/routes.js";
+import "dotenv/config";
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
@@ -16,5 +17,5 @@ app.use('/static', express.static(resolve(__dirname, '..', 'public')));
 for(const router of routers) {
     app.use(router)
 }
-
-app.listen(3000, () => {console.log("A aplicacao esta rodando...")});
+const port = process.env.APP_PORT;
+app.listen(port, () => {console.log(`A aplicacao esta rodando na porta ${port}...`)});

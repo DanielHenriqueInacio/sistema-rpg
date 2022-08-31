@@ -1,4 +1,4 @@
-import {response} from "express";
+import {listarTodasArmas} from "../Services/jogadorService.js";
 
 const Home = (request, response) => {
     response.locals = {title: "Home"};
@@ -30,9 +30,11 @@ const subAtributos = (request, response) => {
     response.render("jogador/modals/sub-atributos");
 }
 
-const armasArmaduras = (request, response) => {
+const armasArmaduras = async (request, response) => {
+    const armas = await listarTodasArmas();
+    console.log(armas.data)
     response.locals = {title: "idiomas"};
-    response.render("jogador/modals/armas-armaduras");
+    response.render("jogador/modals/armas-armaduras", {armas: armas.data});
 }
 
 const magias = (request, response) => {

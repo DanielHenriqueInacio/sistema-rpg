@@ -2,3 +2,4 @@
 api/dist
 front/dist
 front/node_modules
+front/.env
