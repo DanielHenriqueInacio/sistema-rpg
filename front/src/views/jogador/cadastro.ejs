@@ -1,0 +1,18 @@
+<%- contentFor("estilo") %>
+<link rel="stylesheet" href="/static/css/signin.css">
+
+<%- contentFor("content") %>
+
+<form class="form-signin text-center">
+
+    <h1 class="h3 mb-3 font-weight-normal">Cadastro</h1>
+    <label for="name" class="d-flex align-items-start">Nome</label>
+    <input type="text" id="inputname" class="form-control" placeholder="Insira seu Nome" required autofocus>
+    <label for="email" class="d-flex align-items-start">E-mail</label>
+    <input type="text" id="inputemail" class="form-control" placeholder="Insira seu E-mail" required>
+    <label for="inputPassword" class="d-flex align-items-start">Senha</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="insira uma senha" required>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Salvar</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2022</p>
+</form>
