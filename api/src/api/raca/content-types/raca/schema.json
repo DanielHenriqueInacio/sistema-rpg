@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "racas",
+  "info": {
+    "singularName": "raca",
+    "pluralName": "racas",
+    "displayName": "Raças"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

@@ -11,18 +11,18 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@_sh/strapi-plugin-ckeditor": "^1.1.2",
     "@strapi/plugin-documentation": "^4.3.6",
     "@strapi/plugin-i18n": "4.3.6",
     "@strapi/plugin-users-permissions": "4.3.6",
     "@strapi/strapi": "4.3.6",
-    "mysql": "2.18.1"
+    "better-sqlite3": "7.4.6",
+    "mysql": "^2.18.1"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "cfea5a6d-cc36-465b-b0e1-ceee5b64639d"
+    "uuid": "e75bdfbb-ec2d-4726-b665-4beaebb213ee"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",

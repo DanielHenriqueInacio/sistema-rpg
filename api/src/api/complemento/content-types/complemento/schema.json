@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "complementos",
+  "info": {
+    "singularName": "complemento",
+    "pluralName": "complementos",
+    "displayName": "Complementos"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "type": "richtext",
+      "required": true
+    },
+    "foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "pericia",
+        "itens"
+      ],
+      "required": true
+    }
+  }
+}

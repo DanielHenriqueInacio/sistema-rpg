@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "magias",
+  "info": {
+    "singularName": "magia",
+    "pluralName": "magias",
+    "displayName": "Magias"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "type": "richtext",
+      "required": true
+    },
+    "nivel_minimo": {
+      "type": "integer",
+      "required": true
+    },
+    "dano": {
+      "type": "enumeration",
+      "enum": [
+        "D4",
+        "D6",
+        "D8",
+        "D10",
+        "D12",
+        "D20",
+        "D100"
+      ],
+      "required": true
+    }
+  }
+}

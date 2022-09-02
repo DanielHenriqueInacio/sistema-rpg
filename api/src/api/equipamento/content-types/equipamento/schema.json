@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipamentos",
+  "info": {
+    "singularName": "equipamento",
+    "pluralName": "equipamentos",
+    "displayName": "Equipamentos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "dado_ataque": {
+      "type": "enumeration",
+      "enum": [
+        "d4",
+        "d6",
+        "d8",
+        "d10",
+        "d12",
+        "d20",
+        "d100"
+      ],
+      "default": "d4"
+    },
+    "defesa": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "tipo_equipamento": {
+      "type": "enumeration",
+      "enum": [
+        "arma",
+        "armadura",
+        "ornamento"
+      ],
+      "default": "arma"
+    },
+    "descricao": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
