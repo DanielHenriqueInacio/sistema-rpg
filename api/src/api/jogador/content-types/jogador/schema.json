@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jogadores",
+  "info": {
+    "singularName": "jogador",
+    "pluralName": "jogadores",
+    "displayName": "Jogadores"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "senha": {
+      "type": "password",
+      "required": true
+    },
+    "perfil": {
+      "type": "enumeration",
+      "enum": [
+        "mestre",
+        "jogador"
+      ],
+      "required": true,
+      "default": "jogador"
+    }
+  }
+}

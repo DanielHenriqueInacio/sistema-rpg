@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "historicos_de_campanhas",
+  "info": {
+    "singularName": "historico-de-campanhas",
+    "pluralName": "historicos-de-campanhas",
+    "displayName": "Histórico de Campanhas"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "campanha_id": {
+      "type": "integer",
+      "required": true
+    },
+    "acontecimento": {
+      "type": "text",
+      "required": true
+    },
+    "data_acontecimento": {
+      "type": "datetime"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campanha",
+  "info": {
+    "singularName": "campanhas",
+    "pluralName": "campanha",
+    "displayName": "Campanhas",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "historia": {
+      "type": "richtext",
+      "required": true
+    },
+    "mestre_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jogador.jogador"
+    },
+    "data_inicio": {
+      "type": "datetime",
+      "required": true
+    },
+    "data_fim": {
+      "type": "datetime"
+    }
+  }
+}
