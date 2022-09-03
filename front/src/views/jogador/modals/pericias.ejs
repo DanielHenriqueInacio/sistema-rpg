@@ -15,46 +15,14 @@
                                 </div>
                             </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1"
-                                       value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Parkour
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2"
-                                       value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Escalar Muro
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2"
-                                       value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Andar cavalo
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2"
-                                       value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Saltos Mortais
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2"
-                                       value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Acrobacias
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2"
-                                       value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Cair com suavidade
-                                </label>
+                                <% for(const pericia of pericias.data) { %>
+                                    <input class="form-check-input" type="checkbox" name="exampleRadios"
+                                           id="exampleRadios1"
+                                           value="option1" checked>
+                                    <label value="<%= pericia.id %>" class="form-check-label mr-3" for="exampleRadios1">
+                                        <%= pericia.attributes.nome %>
+                                    </label>
+                                <% } %>
                             </div>
                         </div>
                     </div>

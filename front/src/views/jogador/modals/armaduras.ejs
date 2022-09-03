@@ -1,0 +1,49 @@
+<%- contentFor("estilo") %>
+
+<%- contentFor("content") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h1 class="h2 mb-3 fw-normal text-center">Armaduras</h1>
+                </div>
+                <div class="col-md-12">
+                    <form action="">
+                        <table class="table table-bordered table-responsive-sm text-center">
+                            <thead>
+                                <tr>
+                                    <th>Selecione</th>
+                                    <th>Nome</th>
+                                    <th>Imagem</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% for(const armadura of armaduras.data) { %>
+                                <tr>
+                                    <td value="" class="col-md-2">
+                                        <div class="form-check form-check-inline px-5">
+                                            <input class="form-check-input" type="radio" name="exampleRadios"
+                                                   id="exampleRadios2" value="option2">
+
+                                        </div>
+                                    </td>
+                                    <td value="<%= armadura.id %>" class="col-md-3"><%= armadura.attributes.nome %></td>
+                                    <td value="<%= armadura.id %>"
+                                        class="col-md-3"><%= armadura.attributes.imagem %></td>
+                                    <td value="<%= armadura.id %>"
+                                        class="col-md-4"><%= armadura.attributes.descricao %></td>
+                                </tr>
+                            <% } %>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+    </div>
+</div>
