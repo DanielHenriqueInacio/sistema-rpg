@@ -1,13 +1,20 @@
-import {listarTodasArmas} from "../Services/jogadorService.js";
+import {listarRacas} from "../Services/racaService.js";
+import {listarClasse} from "../Services/classeService.js";
+import {listarIdioma} from "../Services/idiomasService.js";
+import {listarArmaduras, listarArmas, listarOrnamentos} from "../Services/equipamentoService.js";
+import {listarMagias} from "../Services/magiaService.js";
+import {listarItens, listarPericias} from "../Services/complementoService.js";
 
 const Home = (request, response) => {
     response.locals = {title: "Home"};
     response.render("jogador/home");
 }
 
-const informacaoPersonagem = (request, response) => {
-   response.locals = {title: "Ver tela do Jogador"};
-   response.render("jogador/modals/informacoes-personagem");
+const informacaoPersonagem = async (request, response) => {
+    const racas = await listarRacas();
+    const classes = await listarClasse();
+    response.locals = {title: "Ver tela do Jogador"};
+    response.render("jogador/modals/informacoes-personagem", {racas: racas?.data, classes: classes?.data});
 }
 
 const caracteristicasBasicas = (request, response) => {
@@ -15,41 +22,61 @@ const caracteristicasBasicas = (request, response) => {
     response.render("jogador/modals/caracteristicas-basicas");
 }
 
-const idiomasEBens = (request, response) => {
+const idiomas = async (request, response) => {
+    const idiomas = await listarIdioma();
     response.locals = {title: "idiomas"};
-    response.render("jogador/modals/idiomas-dinheiro-bens");
+    response.render("jogador/modals/idiomas", {idiomas: idiomas?.data});
+}
+
+const dinheirBens = async (request, response) => {
+    response.locals = {title: "Dinheiro e Bens"};
+    response.render("jogador/modals/dinheiro-bens");
 }
 
 const atributosPersonagem = (request, response) => {
-    response.locals = {title: "idiomas"};
+    response.locals = {title: "Atributos"};
     response.render("jogador/modals/atributos-personagem");
 }
 
 const subAtributos = (request, response) => {
-    response.locals = {title: "idiomas"};
+    response.locals = {title: "Sub Atributos"};
     response.render("jogador/modals/sub-atributos");
 }
 
-const armasArmaduras = async (request, response) => {
-    const armas = await listarTodasArmas();
-    console.log(armas.data)
-    response.locals = {title: "idiomas"};
-    response.render("jogador/modals/armas-armaduras", {armas: armas.data});
+const armas = async (request, response) => {
+    const armas = await listarArmas();
+    response.locals = {title: "Armas"};
+    response.render("jogador/modals/armas", {armas: armas?.data});
 }
 
-const magias = (request, response) => {
-    response.locals = {title: "idiomas"};
-    response.render("jogador/modals/magias");
+const armaduras = async (request, response) => {
+    const armaduras = await listarArmaduras();
+    response.locals = {title: "Armaduras"};
+    response.render("jogador/modals/armaduras", {armaduras: armaduras?.data});
 }
 
-const pericias = (request, response) => {
-    response.locals = {title: "idiomas"};
-    response.render("jogador/modals/pericias");
+const ornamentos = async (request, response) => {
+    const ornamentos = await listarOrnamentos();
+    response.locals = {title: "Ornamentos"};
+    response.render("jogador/modals/ornamentos", {ornamentos: ornamentos?.data});
 }
 
-const itensGerais = (request, response) => {
+const magias = async (request, response) => {
+    const magias = await listarMagias();
     response.locals = {title: "idiomas"};
-    response.render("jogador/modals/itens-gerais");
+    response.render("jogador/modals/magias", {magias: magias?.data});
+}
+
+const pericias = async (request, response) => {
+    const pericias = await listarPericias()
+    response.locals = {title: "idiomas"};
+    response.render("jogador/modals/pericias", {pericias: pericias?.data});
+}
+
+const itensGerais = async (request, response) => {
+    const itens = await listarItens()
+    response.locals = {title: "idiomas"};
+    response.render("jogador/modals/itens-gerais", {itens: itens?.data});
 }
 
 const meusPersonagem = (request, response) => {
@@ -67,10 +94,13 @@ export {
     Home,
     informacaoPersonagem,
     caracteristicasBasicas,
-    idiomasEBens,
+    idiomas,
+    dinheirBens,
     atributosPersonagem,
     subAtributos,
-    armasArmaduras,
+    armas,
+    armaduras,
+    ornamentos,
     magias,
     pericias,
     itensGerais,
