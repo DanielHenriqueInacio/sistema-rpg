@@ -1,0 +1,94 @@
+{
+  "kind": "collectionType",
+  "collectionName": "personagens",
+  "info": {
+    "singularName": "personagem",
+    "pluralName": "personagens",
+    "displayName": "Personagens",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "raca": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::raca.raca"
+    },
+    "classe": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::classe.classe"
+    },
+    "jogador": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jogador.jogador"
+    },
+    "idade": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "peso": {
+      "type": "decimal",
+      "min": 0,
+      "required": true
+    },
+    "altura": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "historia": {
+      "type": "text",
+      "required": true,
+      "minLength": 50,
+      "maxLength": 1000
+    },
+    "moedas_ouro": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "moeda_prata": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "moeda_bronze": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "bens": {
+      "type": "text"
+    },
+    "nivel": {
+      "type": "integer",
+      "required": true
+    },
+    "pontos_experiencia": {
+      "type": "integer",
+      "required": true
+    },
+    "atributos": {
+      "type": "dynamiczone",
+      "components": [
+        "atributo.atributo"
+      ]
+    },
+    "atributos_iniciais": {
+      "type": "json"
+    }
+  }
+}

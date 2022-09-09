@@ -17,51 +17,41 @@
       "type": "string",
       "minLength": 3,
       "unique": true,
-      "configurable": false,
       "required": true
     },
     "email": {
       "type": "email",
       "minLength": 6,
-      "configurable": false,
       "required": true
     },
     "provider": {
-      "type": "string",
-      "configurable": false
+      "type": "string"
     },
     "password": {
       "type": "password",
-      "minLength": 6,
-      "configurable": false,
-      "private": true
+      "minLength": 6
     },
     "resetPasswordToken": {
       "type": "string",
-      "configurable": false,
       "private": true
     },
     "confirmationToken": {
       "type": "string",
-      "configurable": false,
       "private": true
     },
     "confirmed": {
       "type": "boolean",
-      "default": false,
-      "configurable": false
+      "default": false
     },
     "blocked": {
       "type": "boolean",
-      "default": false,
-      "configurable": false
+      "default": false
     },
     "role": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.role",
-      "inversedBy": "users",
-      "configurable": false
+      "inversedBy": "users"
     },
     "name": {
       "type": "string",

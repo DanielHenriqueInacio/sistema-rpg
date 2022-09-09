@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_atributo_atributos",
+  "info": {
+    "displayName": "atributo",
+    "icon": "dice-d20",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "valor": {
+      "type": "integer",
+      "required": true
+    },
+    "variacao": {
+      "type": "integer"
+    },
+    "atributo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::atributo.atributo"
+    }
+  }
+}

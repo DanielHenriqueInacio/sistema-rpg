@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "atributos",
+  "info": {
+    "singularName": "atributo",
+    "pluralName": "atributos",
+    "displayName": "Atributos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
