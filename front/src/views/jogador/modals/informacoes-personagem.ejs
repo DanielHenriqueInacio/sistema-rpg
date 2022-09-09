@@ -1,3 +1,5 @@
+<%- contentFor("estilo")%>
+
 <%- contentFor("content")%>
 
 <div class="container">
@@ -8,36 +10,36 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Jogador</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="exampleInputPassword1">Personagem</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Personagem</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword1">Raça</label>
+                            <select name="" id="" class="form-control">
+                                <option value="">Selecione</option>
+                                <%for(const raca of racas.data) {%>
+                                    <option value="<%= raca.id%>"><%= raca.attributes.nome%></option>
+                                <%}%>
+                            </select>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Raça</label>
-                            <select name="" id="" class="form-control">
-                                <option value="">Selecione</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Classe</label>
                             <select name="" id="" class="form-control">
                                 <option value="">Selecione</option>
+                                <%for(const classe of classes.data) {%>
+                                    <option value="<%= classe.id%>"><%= classe.attributes.nome%></option>
+                                <%}%>
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="d-block">Genero</label>
                             <div class="form-check form-check-inline">
