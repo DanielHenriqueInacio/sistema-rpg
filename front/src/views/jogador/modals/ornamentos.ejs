@@ -32,11 +32,17 @@
                                         </div>
                                     </td>
                                     <td value="<%= ornamento.id %>"
-                                        class="col-md-3"><%= ornamento.attributes.nome %></td>
+                                        class="col-md-3"><%= ornamento.nome %></td>
                                     <td value="<%= ornamento.id %>"
-                                        class="col-md-3"><%= ornamento.attributes.imagem %></td>
+                                        class="col-md-3">
+                                        <% if(ornamento.foto == null) {%>
+                                            <img src="/static/imagens/SemFoto.png" width="100" alt="">
+                                        <%} else {%>
+                                            <img src="<%= `${apiUrl}${ornamento.foto.formats.thumbnail.url}`%>" alt="">
+                                        <%}%>
+                                    </td>
                                     <td value="<%= ornamento.id %>"
-                                        class="col-md-4"><%= ornamento.attributes.descricao %></td>
+                                        class="col-md-4"><%= ornamento.descricao %></td>
                                 </tr>
                             <% } %>
                             </tbody>
