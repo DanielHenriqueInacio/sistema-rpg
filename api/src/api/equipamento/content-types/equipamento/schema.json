@@ -54,6 +54,12 @@
     "descricao": {
       "type": "richtext",
       "required": true
+    },
+    "nivel_minimo": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 1
     }
   }
 }

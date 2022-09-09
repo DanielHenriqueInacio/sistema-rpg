@@ -4,23 +4,25 @@
   "info": {
     "singularName": "historico-de-campanhas",
     "pluralName": "historicos-de-campanhas",
-    "displayName": "Histórico de Campanhas"
+    "displayName": "Histórico de Campanhas",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "campanha_id": {
-      "type": "integer",
-      "required": true
-    },
     "acontecimento": {
       "type": "text",
       "required": true
     },
     "data_acontecimento": {
       "type": "datetime"
+    },
+    "campanha": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campanhas.campanhas"
     }
   }
 }

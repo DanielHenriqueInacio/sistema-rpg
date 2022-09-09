@@ -20,7 +20,7 @@
       "type": "richtext",
       "required": true
     },
-    "mestre_id": {
+    "mestre": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::jogador.jogador"
