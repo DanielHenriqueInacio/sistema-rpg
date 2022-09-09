@@ -84,6 +84,11 @@ const cadastroPersonagem = (request, response) => {
     response.render("jogador/personagens/cadastro-de-personagem");
 }
 
+const cadastroAtributos = (request, response) => {
+    response.locals = {title: "Cadastro"};
+    response.render("jogador/personagens/cadastro-atributos");
+}
+
 const meusPersonagem = (request, response) => {
     response.locals = {title: "Personagens"};
     response.render("jogador/personagens/meus-personagens");
@@ -110,6 +115,7 @@ export {
     pericias,
     itensGerais,
     cadastroPersonagem,
+    cadastroAtributos,
     meusPersonagem,
     minhasCampanhas
 }

@@ -1,5 +1,11 @@
 import {Router} from "express";
-import {cadastroPersonagem, Home, meusPersonagem, minhasCampanhas} from "../App/Controllers/JogadorController.js";
+import {
+    cadastroAtributos,
+    cadastroPersonagem,
+    Home,
+    meusPersonagem,
+    minhasCampanhas
+} from "../App/Controllers/JogadorController.js";
 
 const personagemRouter = new Router();
 
@@ -9,5 +15,6 @@ personagemRouter.use((req, res, next) => {
 });
 
 personagemRouter.get("/cadastro-personagem", cadastroPersonagem);
+personagemRouter.get("/cadastro-atributos", cadastroAtributos);
 
 export default personagemRouter;
