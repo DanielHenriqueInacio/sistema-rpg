@@ -20,7 +20,7 @@
                             <select name="" id="" class="form-control">
                                 <option value="">Selecione</option>
                                 <%for(const raca of racas.data) {%>
-                                    <option value="<%= raca.id%>"><%= raca.attributes.nome%></option>
+                                    <option value="<%= raca.id%>"><%= raca.nome%></option>
                                 <%}%>
                             </select>
                         </div>
@@ -34,7 +34,7 @@
                             <select name="" id="" class="form-control">
                                 <option value="">Selecione</option>
                                 <%for(const classe of classes.data) {%>
-                                    <option value="<%= classe.id%>"><%= classe.attributes.nome%></option>
+                                    <option value="<%= classe.id%>"><%= classe.nome%></option>
                                 <%}%>
                             </select>
                         </div>

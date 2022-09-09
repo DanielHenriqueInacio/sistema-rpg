@@ -46,19 +46,19 @@ const subAtributos = (request, response) => {
 const armas = async (request, response) => {
     const armas = await listarArmas();
     response.locals = {title: "Armas"};
-    response.render("jogador/modals/armas", {armas: armas?.data});
+    response.render("jogador/modals/armas", {armas: armas?.data, apiUrl: process.env.BASE_URL});
 }
 
 const armaduras = async (request, response) => {
     const armaduras = await listarArmaduras();
     response.locals = {title: "Armaduras"};
-    response.render("jogador/modals/armaduras", {armaduras: armaduras?.data});
+    response.render("jogador/modals/armaduras", {armaduras: armaduras?.data, apiUrl: process.env.BASE_URL});
 }
 
 const ornamentos = async (request, response) => {
     const ornamentos = await listarOrnamentos();
     response.locals = {title: "Ornamentos"};
-    response.render("jogador/modals/ornamentos", {ornamentos: ornamentos?.data});
+    response.render("jogador/modals/ornamentos", {ornamentos: ornamentos?.data, apiUrl: process.env.BASE_URL});
 }
 
 const magias = async (request, response) => {
