@@ -8,6 +8,8 @@ defaultRouter.use((req, res, next) => {
 });
 
 defaultRouter.get("/cadastro", cadastro);
+defaultRouter.post("/cadastro", cadastro);
 defaultRouter.get("/login", login);
+defaultRouter.post("/login", login);
 
 export default defaultRouter;
