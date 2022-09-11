@@ -46,46 +46,56 @@ const subAtributos = (request, response) => {
 const armas = async (request, response) => {
     const armas = await listarArmas();
     response.locals = {title: "Armas"};
-    response.render("jogador/modals/armas", {armas: armas?.data});
+    response.render("jogador/modals/armas", {armas: armas?.data, apiUrl: process.env.BASE_URL});
 }
 
 const armaduras = async (request, response) => {
     const armaduras = await listarArmaduras();
     response.locals = {title: "Armaduras"};
-    response.render("jogador/modals/armaduras", {armaduras: armaduras?.data});
+    response.render("jogador/modals/armaduras", {armaduras: armaduras?.data, apiUrl: process.env.BASE_URL});
 }
 
 const ornamentos = async (request, response) => {
     const ornamentos = await listarOrnamentos();
     response.locals = {title: "Ornamentos"};
-    response.render("jogador/modals/ornamentos", {ornamentos: ornamentos?.data});
+    response.render("jogador/modals/ornamentos", {ornamentos: ornamentos?.data, apiUrl: process.env.BASE_URL});
 }
 
 const magias = async (request, response) => {
     const magias = await listarMagias();
-    response.locals = {title: "idiomas"};
+    response.locals = {title: "Magias"};
     response.render("jogador/modals/magias", {magias: magias?.data});
 }
 
 const pericias = async (request, response) => {
     const pericias = await listarPericias()
-    response.locals = {title: "idiomas"};
+    response.locals = {title: "Pericias"};
     response.render("jogador/modals/pericias", {pericias: pericias?.data});
 }
 
 const itensGerais = async (request, response) => {
     const itens = await listarItens()
-    response.locals = {title: "idiomas"};
+    response.locals = {title: "Itens"};
     response.render("jogador/modals/itens-gerais", {itens: itens?.data});
 }
 
+const cadastroPersonagem = (request, response) => {
+    response.locals = {title: "Cadastro"};
+    response.render("jogador/personagens/cadastro-de-personagem");
+}
+
+const cadastroAtributos = (request, response) => {
+    response.locals = {title: "Cadastro"};
+    response.render("jogador/personagens/cadastro-atributos");
+}
+
 const meusPersonagem = (request, response) => {
-    response.locals = {title: "idiomas"};
-    response.render("jogador/meus-personagens");
+    response.locals = {title: "Personagens"};
+    response.render("jogador/personagens/meus-personagens");
 }
 
 const minhasCampanhas = (request, response) => {
-    response.locals = {title: "idiomas"};
+    response.locals = {title: "Campanhas"};
     response.render("jogador/minhas-campanhas");
 }
 
@@ -104,6 +114,8 @@ export {
     magias,
     pericias,
     itensGerais,
+    cadastroPersonagem,
+    cadastroAtributos,
     meusPersonagem,
     minhasCampanhas
 }

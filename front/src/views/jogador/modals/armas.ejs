@@ -31,9 +31,15 @@
 
                                         </div>
                                     </td>
-                                    <td value="<%= arma.id %>" class="col-md-3"><%= arma.attributes.nome %></td>
-                                    <td value="<%= arma.id %>" class="col-md-3"><%= arma.attributes.imagem %></td>
-                                    <td value="<%= arma.id %>" class="col-md-4"><%= arma.attributes.descricao %></td>
+                                    <td value="<%= arma.id %>" class="col-md-3"><%= arma.nome %></td>
+                                    <td value="<%= arma.id %>" class="col-md-3">
+                                        <% if(arma.foto == null) {%>
+                                            <img src="/static/imagens/SemFoto.png" width="100" alt="">
+                                        <%} else {%>
+                                            <img src="<%= `${apiUrl}${arma.foto.formats.thumbnail.url}`%>" alt="">
+                                        <%}%>
+                                    </td>
+                                    <td value="<%= arma.id %>" class="col-md-4"><%= arma.descricao %></td>
                                 </tr>
                             <% } %>
                             </tbody>
