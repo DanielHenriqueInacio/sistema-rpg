@@ -33,6 +33,16 @@
       ],
       "required": true,
       "default": "jogador"
+    },
+    "email_verificado": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "bloqueado": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
