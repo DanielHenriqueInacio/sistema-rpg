@@ -13,14 +13,14 @@ module.exports = createCoreController('api::jogador.jogador', ({ strapi }) => ({
     const { email, senha } = ctx.request.body;
 
     const user = await strapi.db.query('api::jogador.jogador').findOne({
-      where: { email }
+      where: { email, bloqueado: false, email_verificado: true }
     });
 
     if (user == null) {
       return {
         status: "fail",
         data: {
-          message: "Jogador não foi encontrado"
+          message: "Jogador não foi encontrado ou e-mail não foi verificado."
         }
       }
     }
