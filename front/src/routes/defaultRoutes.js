@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {cadastro, login} from "../App/Controllers/autenticacaoController.js";
+import {cadastro, login, logout} from "../App/Controllers/autenticacaoController.js";
 const defaultRouter = new Router();
 
 defaultRouter.use((req, res, next) => {
@@ -8,6 +8,9 @@ defaultRouter.use((req, res, next) => {
 });
 
 defaultRouter.get("/cadastro", cadastro);
+defaultRouter.post("/cadastro", cadastro);
 defaultRouter.get("/login", login);
+defaultRouter.post("/login", login);
+defaultRouter.get("/logout", logout);
 
 export default defaultRouter;

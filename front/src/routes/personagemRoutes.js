@@ -2,10 +2,8 @@ import {Router} from "express";
 import {
     cadastroAtributos,
     cadastroPersonagem,
-    Home,
-    meusPersonagem,
-    minhasCampanhas
 } from "../App/Controllers/JogadorController.js";
+import authMiddleware from "../App/Middlewares/authMiddleware.js";
 
 const personagemRouter = new Router();
 
@@ -14,7 +12,7 @@ personagemRouter.use((req, res, next) => {
     next();
 });
 
-personagemRouter.get("/cadastro-personagem", cadastroPersonagem);
-personagemRouter.get("/cadastro-atributos", cadastroAtributos);
+personagemRouter.get("/cadastro-personagem", authMiddleware, cadastroPersonagem);
+personagemRouter.get("/cadastro-atributos", authMiddleware, cadastroAtributos);
 
 export default personagemRouter;

@@ -23,6 +23,7 @@ body {
 body {
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
     -ms-flex-align: center;
     align-items: center;
     padding-top: 40px;
@@ -32,9 +33,12 @@ body {
 
 .form-signin {
     width: 100%;
-    max-width: 330px;
-    padding: 15px;
+    max-width: 404px;
     margin: auto;
+    border: 1px solid #ccc;
+    padding: 33px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
 }
 .form-signin .checkbox {
     font-weight: 400;
