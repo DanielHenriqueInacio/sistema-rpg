@@ -6,6 +6,7 @@ import {
     magias, ornamentos, pericias,
     subAtributos
 } from "../App/Controllers/JogadorController.js";
+import authMiddleware from "../App/Middlewares/authMiddleware.js";
 const modalRouter = new Router();
 
 modalRouter.use((req, res, next) => {
@@ -13,17 +14,17 @@ modalRouter.use((req, res, next) => {
     next();
 });
 
-modalRouter.get("/personagem/informacoes", informacaoPersonagem);
-modalRouter.get("/personagem/caracteristicas-basicas", caracteristicasBasicas);
-modalRouter.get("/personagem/idiomas", idiomas);
-modalRouter.get("/personagem/dinheiro-bens", dinheirBens);
-modalRouter.get("/personagem/atributos", atributosPersonagem);
-modalRouter.get("/personagem/sub-atributos", subAtributos);
-modalRouter.get("/personagem/armas", armas);
-modalRouter.get("/personagem/armaduras", armaduras);
-modalRouter.get("/personagem/ornamentos", ornamentos);
-modalRouter.get("/personagem/magias", magias);
-modalRouter.get("/personagem/pericias", pericias);
-modalRouter.get("/personagem/itens-gerais", itensGerais);
+modalRouter.get("/personagem/informacoes", authMiddleware, informacaoPersonagem);
+modalRouter.get("/personagem/caracteristicas-basicas", authMiddleware, caracteristicasBasicas);
+modalRouter.get("/personagem/idiomas", authMiddleware, idiomas);
+modalRouter.get("/personagem/dinheiro-bens", authMiddleware, dinheirBens);
+modalRouter.get("/personagem/atributos", authMiddleware, atributosPersonagem);
+modalRouter.get("/personagem/sub-atributos", authMiddleware, subAtributos);
+modalRouter.get("/personagem/armas", authMiddleware, armas);
+modalRouter.get("/personagem/armaduras", authMiddleware, armaduras);
+modalRouter.get("/personagem/ornamentos", authMiddleware, ornamentos);
+modalRouter.get("/personagem/magias", authMiddleware, magias);
+modalRouter.get("/personagem/pericias", authMiddleware, pericias);
+modalRouter.get("/personagem/itens-gerais", authMiddleware, itensGerais);
 
 export default modalRouter;

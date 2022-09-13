@@ -45,6 +45,16 @@
     </div>
 </nav>
 
+<% if(typeof sessionFlash !== "undefined"){%>
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-<%= sessionFlash.style%> col-md-12">
+                <%= sessionFlash.message%>
+            </div>
+        </div>
+    </div>
+<%}%>
+
 <%- content %>
 
 <footer class="footer border-top">
