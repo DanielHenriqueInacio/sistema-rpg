@@ -36,14 +36,36 @@
                 </li>
             </ul>
             <ul class="navbar-nav my-2 my-lg-0">
-<!--                <li class="nav-item"><%- `Bem Vindo Jubileu`%></li>-->
+                <li class="nav-item navbar-text mr-5 text-white"><%- `Olá ${user.nome}, Bem Vindo!`%></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Sair</a>
+                    <a class="nav-link" href="/logout">Sair</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<% if(typeof sessionFlash !== "undefined"){ %>
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-<%= sessionFlash.style %> col-md-12">
+
+                <% if(Array.isArray(sessionFlash.message)) { %>
+                    <ul>
+                        <% for(let message of sessionFlash.message) { %>
+                            <li>
+                                <%= message %>
+                            </li>
+                        <% } %>
+                    </ul>
+                <% } else { %>
+                    <%= sessionFlash.message %>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+<% } %>
 
 <%- content %>
 
