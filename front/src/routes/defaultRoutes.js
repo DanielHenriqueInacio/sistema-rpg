@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {cadastro, login, logout} from "../App/Controllers/autenticacaoController.js";
+import {cadastro, login, logout, validarEmailJogador} from "../App/Controllers/autenticacaoController.js";
 const defaultRouter = new Router();
 
 defaultRouter.use((req, res, next) => {
@@ -12,5 +12,6 @@ defaultRouter.post("/cadastro", cadastro);
 defaultRouter.get("/login", login);
 defaultRouter.post("/login", login);
 defaultRouter.get("/logout", logout);
+defaultRouter.get("/validar-email-jogador/:token", validarEmailJogador)
 
 export default defaultRouter;

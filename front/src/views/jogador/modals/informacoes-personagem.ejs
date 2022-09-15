@@ -11,13 +11,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Personagem</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <input type="text" name="personagem" class="form-control" id="personagem">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Raça</label>
-                            <select name="" id="" class="form-control">
+                            <select name="raca" id="raca" class="form-control">
                                 <option value="">Selecione</option>
                                 <%for(const raca of racas.data) {%>
                                     <option value="<%= raca.id%>"><%= raca.nome%></option>
@@ -31,7 +31,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Classe</label>
-                            <select name="" id="" class="form-control">
+                            <select name="classe" id="classe" class="form-control">
                                 <option value="">Selecione</option>
                                 <%for(const classe of classes.data) {%>
                                     <option value="<%= classe.id%>"><%= classe.nome%></option>
