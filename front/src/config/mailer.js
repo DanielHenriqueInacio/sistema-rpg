@@ -6,6 +6,6 @@ export default nodemailer.createTransport({
     secure: true,
     auth: {
         user: "no-reply@simplifysoftwares.com.br",
-        pass: "Kng26kaG"
+        pass: "xPfuQUPxTuTb"
     }
 });
