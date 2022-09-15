@@ -54,12 +54,12 @@
                     <ul>
                         <% for(let message of sessionFlash.message) { %>
                             <li>
-                                <%= message %>
+                                <%- message %>
                             </li>
                         <% } %>
                     </ul>
                 <% } else { %>
-                    <%= sessionFlash.message %>
+                    <%- sessionFlash.message %>
                 <% } %>
 
             </div>
