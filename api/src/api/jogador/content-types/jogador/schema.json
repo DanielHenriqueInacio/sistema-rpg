@@ -46,6 +46,12 @@
     },
     "token": {
       "type": "string"
+    },
+    "campanhas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::campanhas.campanhas",
+      "mappedBy": "jogadores"
     }
   }
 }

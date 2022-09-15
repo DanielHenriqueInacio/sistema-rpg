@@ -31,6 +31,12 @@
     },
     "data_fim": {
       "type": "datetime"
+    },
+    "jogadores": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::jogador.jogador",
+      "inversedBy": "campanhas"
     }
   }
 }
