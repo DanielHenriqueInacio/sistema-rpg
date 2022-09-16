@@ -1,4 +1,4 @@
-<%- contentFor("content")%>
+<%- contentFor("content") %>
 
 <div class="container">
     <div class="row">
@@ -6,17 +6,20 @@
             <h1 class="h2 mb-4 fw-normal ">Personagens</h1>
         </div>
         <div class="col-md-2">
-            <a href="/cadastro-personagem" class="btn btn-success float-right btn-sm mt-3"><i class="fa-solid fa-plus"></i> Cadastrar</a>
+            <a href="/cadastro-personagem" class="btn btn-success float-right btn-sm mt-3"><i
+                        class="fa-solid fa-plus"></i> Cadastrar</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
+            <% if(personagens.data.length === 0) { %>
+            <div class="alert alert-info col-md-12 text-center">
+                <p>Você não tem nenhum personagem. Clique no botão a cima para cadastrar</p>
+            </div>
+            <% } else { %>
             <table class="table table-bordered text-center">
                 <thead>
                 <tr>
-                    <th class="table-secondary text-dark">
-                        <img src="" alt="">
-                    </th>
                     <th class="table-secondary text-dark">
                         Nome
                     </th>
@@ -32,23 +35,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-
-                    </td>
-                    <td>
-                        <a href="http://">Keiton</a>
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-                </tr>
+                    <% for(const personagem of personagens.data) { %>
+                        <tr>
+                            <td><a href="#"><%= personagem.nome %></a></td>
+                            <td><%= personagem.raca.nome %></td>
+                            <td><%= personagem.classe.nome %></td>
+                            <td><%= personagem.nivel %></td>
+                        </tr>
+                    <% } %>
+                <% } %>
                 </tbody>
             </table>
         </div>
