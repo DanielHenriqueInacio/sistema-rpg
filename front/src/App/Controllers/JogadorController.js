@@ -4,7 +4,10 @@ import {listarIdioma} from "../Services/idiomasService.js";
 import {listarArmaduras, listarArmas, listarOrnamentos} from "../Services/equipamentoService.js";
 import {listarMagias} from "../Services/magiaService.js";
 import {listarItens, listarPericias} from "../Services/complementoService.js";
-import {pegarPersonagemPorJogador} from "../Services/personagemService.js";
+import {
+    pegarCampanhaPorJogador,
+    pegarPersonagemPorJogador
+} from "../Services/personagemService.js";
 
 const Home = (request, response) => {
     response.locals = {title: "Home"};
@@ -94,13 +97,14 @@ const meusPersonagem = async (request, response) => {
     const idJogador = request.session?.user?.id;
     const personagens = await pegarPersonagemPorJogador(idJogador);
     response.locals = {title: "Personagens"};
-    console.log("PERSONAGENS DO JOGADOR", personagens?.data);
     response.render("jogador/personagens/meus-personagens", {personagens: personagens?.data});
 }
 
-const minhasCampanhas = (request, response) => {
+const minhasCampanhas = async (request, response) => {
+    const jogadorId = request.session?.user?.id;
+    const campanhas = await pegarCampanhaPorJogador(jogadorId);
     response.locals = {title: "Campanhas"};
-    response.render("jogador/minhas-campanhas");
+    response.render("jogador/minhas-campanhas", {campanhas: campanhas?.data});
 }
 
 

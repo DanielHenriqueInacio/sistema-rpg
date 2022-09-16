@@ -1,4 +1,4 @@
-<%- contentFor("content")%>
+<%- contentFor("content") %>
 
 <div class="container mt-5">
     <div class="col-md-12">
@@ -6,6 +6,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            <% if(campanhas.data.length === 0) { %>
+                <div class="alert alert-info col-md-12 text-center">
+                    <p>Você não tem nenhum Campanha, fale com seu mestre para começar</p>
+                </div>
+            <% } else { %>
             <table class="table table-bordered text-center">
                 <thead>
                 <tr>
@@ -15,17 +20,30 @@
                     <th class="table-secondary text-dark">
                         Mestre
                     </th>
+                    <th class="table-secondary text-dark">
+                        Data início
+                    </th>
+                    <th class="table-secondary text-dark">
+                        Data Final
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        <a href="http://">A espada flamejante</a>
-                    </td>
-                    <td>
-
-                    </td>
-                </tr>
+                <% for(const campanha of campanhas.data) { %>
+                    <tr>
+                        <td><a href="#"><%= campanha.titulo %></a></td>
+                        <td><%= campanha.mestre.nome %></td>
+                        <td><%= campanha.data_inicio %></td>
+                        <td>
+                            <% if(campanha.data_fim === null) { %>
+                                <p>Em andamento</p>
+                            <% } else { %>
+                                <%= campanha.data_fim %>
+                            <% } %>
+                        </td>
+                    </tr>
+                <% } %>
+                <% } %>
                 </tbody>
             </table>
         </div>
