@@ -4,7 +4,7 @@ import {
     caracteristicasBasicas, dinheirBens, idiomas,
     informacaoPersonagem, itensGerais,
     magias, ornamentos, pericias,
-    subAtributos
+    subAtributos, mostrarCampanhaDeJogador
 } from "../App/Controllers/JogadorController.js";
 import authMiddleware from "../App/Middlewares/authMiddleware.js";
 const modalRouter = new Router();
@@ -26,5 +26,6 @@ modalRouter.get("/personagem/ornamentos", authMiddleware, ornamentos);
 modalRouter.get("/personagem/magias", authMiddleware, magias);
 modalRouter.get("/personagem/pericias", authMiddleware, pericias);
 modalRouter.get("/personagem/itens-gerais", authMiddleware, itensGerais);
+modalRouter.get("/jogador/visualizar-campanha/:id", authMiddleware, mostrarCampanhaDeJogador);
 
 export default modalRouter;

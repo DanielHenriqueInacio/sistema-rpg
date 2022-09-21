@@ -31,7 +31,7 @@
                 <tbody>
                 <% for(const campanha of campanhas.data) { %>
                     <tr>
-                        <td><a href="#"><%= campanha.titulo %></a></td>
+                        <td><a href="/jogador/visualizar-campanha/<%= campanha.id%>" data-fancybox data-type="iframe"><%= campanha.titulo %></a></td>
                         <td><%= campanha.mestre.nome %></td>
                         <td><%= campanha.data_inicio %></td>
                         <td>
