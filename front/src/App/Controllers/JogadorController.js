@@ -4,6 +4,9 @@ import {listarIdioma} from "../Services/idiomasService.js";
 import {listarArmaduras, listarArmas, listarOrnamentos} from "../Services/equipamentoService.js";
 import {listarMagias} from "../Services/magiaService.js";
 import {listarItens, listarPericias} from "../Services/complementoService.js";
+import {pegarPersonagemPorJogador} from "../Services/personagemService.js";
+import {pegarCampanhaPorJogador, pegarCampanhaPorId} from "../Services/campanhaService.js"
+import {pegarHistoricoPorCampanha} from "../Services/historicoCampanhaService.js";
 
 const Home = (request, response) => {
     response.locals = {title: "Home"};
@@ -89,14 +92,33 @@ const cadastroAtributos = (request, response) => {
     response.render("jogador/personagens/cadastro-atributos");
 }
 
-const meusPersonagem = (request, response) => {
+const meusPersonagem = async (request, response) => {
+    const idJogador = request.session?.user?.id;
+    const personagens = await pegarPersonagemPorJogador(idJogador);
     response.locals = {title: "Personagens"};
-    response.render("jogador/personagens/meus-personagens");
+    response.render("jogador/personagens/meus-personagens", {personagens: personagens?.data});
 }
 
-const minhasCampanhas = (request, response) => {
+const minhasCampanhas = async (request, response) => {
+    const jogadorId = request.session?.user?.id;
+    const campanhas = await pegarCampanhaPorJogador(jogadorId);
     response.locals = {title: "Campanhas"};
-    response.render("jogador/minhas-campanhas");
+    response.render("jogador/minhas-campanhas", {campanhas: campanhas?.data});
+}
+
+const mostrarCampanhaDeJogador = async (request, response) => {
+    try {
+        const id = request.params.id
+        const campanha = await pegarCampanhaPorId(id)
+        const historicoDeCampanha = await pegarHistoricoPorCampanha(campanha.data.data.id)
+        response.locals = {title: "Visualizar-Campanha"};
+        response.render("jogador/modals/visualizar-campanha", {
+            campanha: campanha?.data,
+            historicoDeCampanha: historicoDeCampanha?.data
+        });
+    } catch (error) {
+        console.log("ERRO", error)
+    }
 }
 
 
@@ -117,5 +139,6 @@ export {
     cadastroPersonagem,
     cadastroAtributos,
     meusPersonagem,
-    minhasCampanhas
+    minhasCampanhas,
+    mostrarCampanhaDeJogador
 }

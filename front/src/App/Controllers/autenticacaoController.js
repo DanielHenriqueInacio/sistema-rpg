@@ -4,6 +4,7 @@ import mailer from "../../config/mailer.js";
 import {uuid} from "uuidv4";
 
 const cadastro = async (request, response) => {
+    console.log(uuid())
     const objVazio = Object.keys(request.body).length === 0;
     if (!objVazio) {
         const token = uuid();
@@ -130,7 +131,6 @@ const validarEmailJogador = async (request, response) => {
 
         jogador.data.email_verificado = true;
         jogador.data.token = uuid();
-
         const jogadorAlterado = await alterarJogador(jogador, jogador.data.id);
         request.session.user = jogadorAlterado.data.data
 
