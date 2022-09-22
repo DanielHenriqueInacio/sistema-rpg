@@ -89,6 +89,13 @@
     },
     "atributos_iniciais": {
       "type": "json"
+    },
+    "foto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

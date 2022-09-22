@@ -32,11 +32,10 @@
     "data_fim": {
       "type": "datetime"
     },
-    "jogadores": {
+    "personagens": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::jogador.jogador",
-      "inversedBy": "campanhas"
+      "relation": "oneToMany",
+      "target": "api::personagem.personagem"
     }
   }
 }

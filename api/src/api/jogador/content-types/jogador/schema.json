@@ -47,11 +47,15 @@
     "token": {
       "type": "string"
     },
-    "campanhas": {
+    "ultimo_personagem": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::campanhas.campanhas",
-      "mappedBy": "jogadores"
+      "relation": "oneToOne",
+      "target": "api::personagem.personagem"
+    },
+    "ultima_campanha": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campanhas.campanhas"
     }
   }
 }
