@@ -1,30 +1,38 @@
-<%- contentFor("content")%>
+<%- contentFor("content") %>
+
 
 <div class="container">
     <h1 class="text-center mb-5"> Cadastrar </h1>
     <div class="row">
         <div class="col-md-12">
-            <form>
+            <form action="/cadastro-personagem" method="post" class="form-signin">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nome</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" name="nome" id="nome"
+                                   aria-describedby="emailHelp">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Raça</label>
-                            <select name="" id="" class="form-control">
+                            <select name="raca" id="raca" class="form-control">
                                 <option value="">Selecione</option>
+                                <%for(const raca of racas.data) {%>
+                                    <option value="<%= raca.id%>"><%= raca.nome%></option>
+                                <%}%>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Classe</label>
-                            <select name="" id="" class="form-control">
+                            <select name="classe" id="classe" class="form-control">
                                 <option value="">Selecione</option>
+                                <% for(const classe of classes.data) { %>
+                                    <option value="<%= classe.id %>"><%= classe.nome %></option>
+                                <% } %>
                             </select>
                         </div>
                     </div>
@@ -35,14 +43,16 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="d-block">Genero</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
+                                <input class="form-check-input" type="radio" name="genero" id="masc"
+                                       value="masc">
+                                <label class="form-check-label" for="masc">
                                     Masculino
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
+                                <input class="form-check-input" type="radio" name="genero" id="fem"
+                                       value="fem">
+                                <label class="form-check-label" for="fem">
                                     Feminino
                                 </label>
                             </div>
@@ -51,43 +61,34 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="idade">Idade</label>
-                            <input type="number" class="form-control" id="idade" aria-describedby="idadeHelp">
+                            <input type="number" name="idade" class="form-control" id="idade" aria-describedby="idadeHelp">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="peso">Peso</label>
-                            <input type="number" class="form-control" id="peso" aria-describedby="emailHelp">
+                            <input type="number" name="peso" class="form-control" id="peso" aria-describedby="emailHelp">
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="altura">altura</label>
-                            <input type="number" class="form-control" id="altura" aria-describedby="emailHelp">
+                            <input type="number" name="altura" class="form-control" id="altura" aria-describedby="emailHelp">
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <label for="exampleInputPassword1" class="d-block">Idiomas</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Nativo
-                            </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Comum
-                            </label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Antigo
-                            </label>
+                            <% for(const idioma of idiomas.data) { %>
+                                <input class="form-check-input" type="checkbox" name="idiomas[]"
+                                       id="idioma_<%=idioma.id%>"
+                                       value="<%=idioma.id%>">
+                                <label value="<%= idioma.id %>" class="form-check-label mr-3"
+                                       for="idioma_<%=idioma.id%>"><%= idioma.nome %></label>
+                            <% } %>
                         </div>
                     </div>
                 </div>
@@ -95,8 +96,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="exampleInputPassword1">História</label>
-                            <textarea class="form-control" name="" id="" rows="5"></textarea>
+                            <label for="historia">História</label>
+                            <textarea class="form-control" name="historia" id="historia" rows="5"></textarea>
                         </div>
                     </div>
                 </div>

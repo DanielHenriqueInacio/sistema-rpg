@@ -1,4 +1,10 @@
-import {cadastrarJogador, loginAll, pegarJogadorPorEmail, pegarJogadorPorToken, alterarJogador} from "../Services/jogadorService.js";
+import {
+    cadastrarJogador,
+    loginAll,
+    pegarJogadorPorEmail,
+    pegarJogadorPorToken,
+    alterarJogador
+} from "../Services/jogadorService.js";
 import {validarCadastroJogador, validarLoginJogador} from "../Validators/Jogadores/jogadorValidator.js";
 import mailer from "../../config/mailer.js";
 import {uuid} from "uuidv4";

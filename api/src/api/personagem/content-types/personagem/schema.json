@@ -91,11 +91,25 @@
       "type": "json"
     },
     "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
+      ]
+    },
+    "genero": {
+      "type": "enumeration",
+      "enum": [
+        "masc",
+        "fem"
       ],
-      "type": "media",
-      "multiple": false
+      "required": true
+    },
+    "idiomas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::idioma.idioma"
     }
   }
 }
