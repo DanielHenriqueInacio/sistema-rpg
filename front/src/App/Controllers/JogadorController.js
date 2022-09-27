@@ -82,11 +82,6 @@ const itensGerais = async (request, response) => {
     response.render("jogador/modals/itens-gerais", {itens: itens?.data});
 }
 
-const cadastroPersonagem = (request, response) => {
-    response.locals = {title: "Cadastro"};
-    response.render("jogador/personagens/cadastro-de-personagem");
-}
-
 const cadastroAtributos = (request, response) => {
     response.locals = {title: "Cadastro"};
     response.render("jogador/personagens/cadastro-atributos");
@@ -136,7 +131,6 @@ export {
     magias,
     pericias,
     itensGerais,
-    cadastroPersonagem,
     cadastroAtributos,
     meusPersonagem,
     minhasCampanhas,

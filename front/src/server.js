@@ -33,11 +33,13 @@ app.set("views", "./src/views");
 app.use(expressLayouts);
 app.use('/static', express.static(resolve(__dirname, '..', 'public')));
 
-app.use((request, response, next) => {
-    console.log("LOCALS", request.app.locals);
-    console.log("SESSION", request.session)
-    next();
-});
+if (process.env.DEBUG_SESSION === true) {
+    app.use((request, response, next) => {
+        console.log("LOCALS", request.app.locals);
+        console.log("SESSION", request.session)
+        next();
+    });
+}
 
 for(const router of routers) {
     app.use(router)
